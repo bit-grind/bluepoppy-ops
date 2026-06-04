@@ -1,7 +1,7 @@
 # Kounta daily sync
 
 Automatically pulls daily sales from Kounta (Lightspeed Restaurant K-Series) into
-Blue Poppy Ops, so `sales_business_day` and `sales_by_product` stay current
+Cafe Ops, so `sales_business_day` and `sales_by_product` stay current
 without anyone running a script.
 
 ## How it works
@@ -52,5 +52,5 @@ as sensitive because it may contain account content.
 cd kounta-sync
 npm install
 npx playwright install chromium
-KOUNTA_USER=… KOUNTA_PASS=… IMPORT_SECRET=… APP_URL=https://ops.thebluepoppy.co node sync.mjs
+KOUNTA_USER=... KOUNTA_PASS=... IMPORT_SECRET=... APP_URL=https://your-app.example.invalid node sync.mjs
 ```
