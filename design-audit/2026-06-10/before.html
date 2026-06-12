@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Before - Blue Poppy Ops</title>
+  <link rel="stylesheet" href="./prototype.css">
+  <style>
+    .before-header {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .before-header-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 22px 20px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .before-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .before-brand-name {
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .before-brand-sub {
+      margin-top: 2px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .before-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .before-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 4px;
+      overflow: hidden;
+    }
+
+    .before-nav a {
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 10px 16px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .before-nav a.active {
+      color: #fff;
+      font-weight: 600;
+      border-color: #fff;
+    }
+
+    .before-main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    .live-panel {
+      padding: 20px;
+      background: linear-gradient(180deg, #141414, #0f0f0f);
+      border-color: rgba(255, 255, 255, 0.24);
+      display: grid;
+      grid-template-columns: minmax(180px, 280px) minmax(0, 1fr);
+      gap: 22px;
+      align-items: end;
+    }
+
+    .live-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .live-value {
+      margin-top: 10px;
+      font-size: 36px;
+      font-weight: 600;
+    }
+
+    .live-foot {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .brief {
+      margin-top: 18px;
+      padding: 18px;
+    }
+
+    .brief-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .brief-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .select {
+      min-height: 40px;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.04);
+      font: inherit;
+      font-size: 12px;
+    }
+
+    .brief-copy {
+      color: var(--muted-2);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .metric-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .metric {
+      padding: 18px;
+    }
+
+    .metric-value {
+      margin-top: 10px;
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    .metric-foot {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 700px) {
+      .before-header-main {
+        padding: 16px 14px 0;
+        align-items: flex-start;
+      }
+
+      .before-brand {
+        gap: 10px;
+      }
+
+      .before-actions .email {
+        display: none;
+      }
+
+      .before-nav {
+        padding: 0 14px;
+        overflow-x: hidden;
+      }
+
+      .before-nav a {
+        padding: 12px 14px;
+      }
+
+      .before-main {
+        padding: 20px 14px 32px;
+      }
+
+      .live-panel {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 14px;
+      }
+
+      .live-value {
+        font-size: 30px;
+      }
+
+      .brief {
+        padding: 14px;
+      }
+
+      .brief-top {
+        align-items: flex-start;
+      }
+
+      .brief-controls {
+        gap: 6px;
+      }
+
+      .brief-controls .select,
+      .brief-controls .latest {
+        display: none;
+      }
+
+      .metric-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bars {
+        height: 108px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="before-header">
+    <div class="before-header-main">
+      <div class="before-brand">
+        <img class="logo" src="../../public/brand/logo.svg" alt="">
+        <div>
+          <div class="before-brand-name">The Blue Poppy</div>
+          <div class="before-brand-sub">Ops Dashboard</div>
+        </div>
+      </div>
+      <div class="before-actions">
+        <span class="email">manager@bluepoppy.com.au</span>
+        <button class="button">Sign out</button>
+      </div>
+    </div>
+    <nav class="before-nav" aria-label="Primary">
+      <a class="active" href="#">Dashboard</a>
+      <a href="#">Kitchen</a>
+      <a href="#">Recipes</a>
+      <a href="#">Bills</a>
+      <a href="#">Ask AI</a>
+      <a href="#">Calendar</a>
+      <a href="#">Admin</a>
+    </nav>
+  </header>
+
+  <main class="before-main">
+    <section class="panel live-panel">
+      <div>
+        <div class="live-top">
+          <div>
+            <div class="eyebrow">Live takings</div>
+            <div class="muted" style="font-size:11px;margin-top:2px">10 Jun 2026</div>
+          </div>
+          <button class="button icon" aria-label="Refresh">↻</button>
+        </div>
+        <div class="live-value">$3,842</div>
+        <div class="live-foot">Orders: 196 &nbsp;·&nbsp; AOV: $19.60 &nbsp;·&nbsp; Updated 2:40 pm</div>
+      </div>
+      <div>
+        <div class="eyebrow">Hourly sales</div>
+        <div class="bars">
+          <div class="bar" style="height:18%"><span>5am</span></div>
+          <div class="bar" style="height:32%"><span>6am</span></div>
+          <div class="bar" style="height:55%"><span>7am</span></div>
+          <div class="bar" style="height:86%"><span>8am</span></div>
+          <div class="bar" style="height:72%"><span>9am</span></div>
+          <div class="bar" style="height:61%"><span>10am</span></div>
+          <div class="bar" style="height:78%"><span>11am</span></div>
+          <div class="bar" style="height:49%"><span>12pm</span></div>
+          <div class="bar" style="height:36%"><span>1pm</span></div>
+          <div class="bar" style="height:16%"><span>2pm</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel brief">
+      <div class="brief-top">
+        <div>
+          <span class="eyebrow">Morning brief</span>
+          <span class="muted" style="font-size:11px;margin-left:8px">Wednesday · 10 Jun</span>
+        </div>
+        <div class="brief-controls">
+          <button class="button icon">←</button>
+          <select class="select" aria-label="Brief date"><option>Wed 10/06/2026</option></select>
+          <button class="button latest">Latest</button>
+          <button class="button icon" disabled>→</button>
+        </div>
+      </div>
+      <div class="brief-copy">
+        Sales are tracking 7.8% ahead of the same point last week. The strongest
+        period was 8am to 9am, with the morning rush contributing 31% of today's
+        takings. Average order value is steady, while order count is carrying
+        most of the gain. Keep an eye on the softer period after 1pm.
+      </div>
+    </section>
+
+    <section class="metric-grid">
+      <article class="panel metric">
+        <div class="eyebrow">This week</div>
+        <div class="muted" style="font-size:11px;margin-top:2px">8 Jun - 14 Jun</div>
+        <div class="metric-value">$18,460</div>
+        <div class="metric-foot">vs same days last week: <strong style="color:var(--green)">+7.8%</strong></div>
+      </article>
+      <article class="panel metric">
+        <div class="eyebrow">Last week</div>
+        <div class="muted" style="font-size:11px;margin-top:2px">1 Jun - 7 Jun</div>
+        <div class="metric-value">$34,240</div>
+        <div class="metric-foot">Orders: 1,742</div>
+      </article>
+      <article class="panel metric">
+        <div class="eyebrow">This month</div>
+        <div class="muted" style="font-size:11px;margin-top:2px">1 Jun - today</div>
+        <div class="metric-value">$62,810</div>
+        <div class="metric-foot">Last month: $59,020 <strong style="color:var(--green)">(+6.4%)</strong></div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
